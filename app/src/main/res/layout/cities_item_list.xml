@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    card_view:cardBackgroundColor="?attr/card_color"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.andexert.library.RippleView
+            android:id="@+id/rippleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:id="@+id/cityTextViewOnCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            tools:text="@string/mscow"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+            />
+
+    </com.andexert.library.RippleView>
+
+        <TextView
+            android:id="@+id/icon_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toStartOf="@id/temp_card"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            tools:text="A"/>
+
+        <TextView
+            android:id="@+id/temp_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toStartOf="@id/feels_like_temp_card"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            tools:text="0"/>
+
+        <TextView
+            android:id="@+id/feels_like_temp_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintBottom_toBottomOf="@id/temp_card"
+            card_view:layout_constraintEnd_toStartOf="@id/delete_city_btn"
+            android:textSize="16sp"
+            android:layout_marginEnd="8dp"
+            tools:text="0"/>
+
+        <ImageButton
+            android:id="@+id/delete_city_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cancel_black_24dp"
+            android:background="@android:color/transparent"
+            card_view:layout_constraintEnd_toEndOf="@id/rippleView"
+            card_view:layout_constraintTop_toTopOf="@id/rippleView"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/delete_city" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.cardview.widget.CardView>
